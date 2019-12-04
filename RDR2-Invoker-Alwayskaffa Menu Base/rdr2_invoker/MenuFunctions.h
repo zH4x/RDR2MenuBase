@@ -275,6 +275,7 @@ void PlaySoundz(char* SoundName, char* SoundSetName)
 
 int DelayCounter = GetTickCount();
 bool firstopenmenu = false;
+bool PressedButton;
 void monitorButtons()
 {
 	//if (GetTickCount() - DelayCounter > 150)
@@ -290,6 +291,7 @@ void monitorButtons()
 			//SoundToPlay = "FLIGHT_SCHOOL_LESSON_PASSED";
 			///SoundSetToPlay = "HUD_AWARDS";
 			///PlaySounds = true;
+			PressedButton = true;
 		}
 		ResetTimer();
 	}
@@ -301,11 +303,13 @@ void monitorButtons()
 			if (submenu == 1)
 			{
 				submenu = 0;
+				PressedButton = true;
 			}
 			else {
 				submenu = lastSubmenu[submenuLevel - 1];
 				currentOption = lastOption[submenuLevel - 1];
 				submenuLevel--;
+				PressedButton = true;
 			}
 			//SoundToPlay = "BACK";
 			//SoundSetToPlay = "HUD_FRONTEND_DEFAULT_SOUNDSET";
@@ -318,6 +322,7 @@ void monitorButtons()
 			//SoundToPlay = "SELECT";
 			//SoundSetToPlay = "HUD_FRONTEND_DEFAULT_SOUNDSET";
 			//PlaySounds = true;
+			PressedButton = true;
 		}
 		else if ((GetAsyncKeyState(VK_NUMPAD8) & 0x8000) && submenu != 0) ///||// CONTROLS::IS_DISABLED_CONTROL_PRESSED(0, INPUT_FRONTEND_UP) && submenu != 0)//up
 		{
@@ -328,6 +333,7 @@ void monitorButtons()
 			//SoundToPlay = "NAV_UP_DOWN";
 			//SoundSetToPlay = "HUD_FRONTEND_DEFAULT_SOUNDSET";
 			//PlaySounds = true;
+			PressedButton = true;
 		}
 		else if ((GetAsyncKeyState(VK_NUMPAD2) & 0x8000) && submenu != 0) //|| //CONTROLS::IS_DISABLED_CONTROL_PRESSED(0, INPUT_FRONTEND_DOWN) && submenu != 0)//down
 		{
@@ -337,6 +343,7 @@ void monitorButtons()
 			//SoundToPlay = "NAV_UP_DOWN";
 			//SoundSetToPlay = "HUD_FRONTEND_DEFAULT_SOUNDSET";
 			//PlaySounds = true;
+			PressedButton = true;
 		}
 		else if ((GetAsyncKeyState(VK_NUMPAD4) & 0x8000) && submenu != 0)//|| //CONTROLS::IS_DISABLED_CONTROL_PRESSED(0, INPUT_CELLPHONE_LEFT))//down
 		{
@@ -344,6 +351,7 @@ void monitorButtons()
 			//SoundToPlay = "NAV_UP_DOWN";
 			//SoundSetToPlay = "HUD_FRONTEND_DEFAULT_SOUNDSET";
 			//PlaySounds = true;
+			PressedButton = true;
 		}
 		else if ((GetAsyncKeyState(VK_NUMPAD6) & 0x8000) && submenu != 0)//|| //CONTROLS::IS_DISABLED_CONTROL_PRESSED(0, INPUT_CELLPHONE_RIGHT))//down
 		{
@@ -351,6 +359,7 @@ void monitorButtons()
 			//SoundToPlay = "NAV_UP_DOWN";
 			///SoundSetToPlay = "HUD_FRONTEND_DEFAULT_SOUNDSET";
 			//PlaySounds = true;
+			PressedButton = true;
 		}
 	}
 }
