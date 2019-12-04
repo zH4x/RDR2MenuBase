@@ -187,8 +187,13 @@ void Hook()
 
 void PreMonitorButtons()
 {
+	if (PressedButton == true)
+	{
+		wait_for(150);
+		PressedButton = false;
+	}
 	monitorButtons();
-	wait_for(150);
+	//wait_for(150);
 }
 
 void __stdcall fiber_thread(LPVOID params) {
