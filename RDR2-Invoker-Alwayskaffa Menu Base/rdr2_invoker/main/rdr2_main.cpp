@@ -264,7 +264,7 @@ namespace hooks
 		auto status = MH_Initialize();
 		printf("init_status : %s\n", std::string(MH_StatusToString(status)).c_str());
 
-		auto is_dlc_present = memory::find_signature(0, "\x81\xFA\x00\x00\x00\x00\x75\x0B\x8A", "xx????xxx") - 0x1E; // thx to @a60276468 for the sig
+		auto is_dlc_present = memory::find_signature(0, "\xE8\x33\xF3\x1A\x01\x0F\xB6\xD0\x48\x8B\x03", "xxxxxxxxxxx") - 0xC; 
 		printf("is_dlc_present: %I64X\n", is_dlc_present);
 
 		status = MH_CreateHook((PVOID)is_dlc_present, is_dlc_present_hook, reinterpret_cast<void**>(&original::o_is_dlc_present));
