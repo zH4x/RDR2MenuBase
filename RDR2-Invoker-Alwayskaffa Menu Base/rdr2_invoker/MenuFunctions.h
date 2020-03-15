@@ -148,10 +148,10 @@ void addOption(const char* option)
 {
 	optionCount++;
 	if (currentOption <= 16 && optionCount <= 16)
-		drawText(option, optionsFont, menutext, (optionCount * 0.035f + 0.125f), 0.5f, 0.5f, optionsRed, optionsGreen, optionsBlue, optionsOpacity, centerd);
+		drawText(option, optionsFont, menutext, (optionCount * 0.035f + 0.130f), 0.5f, 0.5f, optionsRed, optionsGreen, optionsBlue, optionsOpacity, centerd);
 
 	else if ((optionCount > (currentOption - 16)) && optionCount <= currentOption)
-		drawText(option, optionsFont, menutext, ((optionCount - (currentOption - 16)) * 0.035f + 0.125f), 0.5f, 0.5f, optionsRed, optionsGreen, optionsBlue, optionsOpacity, centerd);
+		drawText(option, optionsFont, menutext, ((optionCount - (currentOption - 16)) * 0.035f + 0.130f), 0.5f, 0.5f, optionsRed, optionsGreen, optionsBlue, optionsOpacity, centerd);
 }
 
 bool rightPress = false;
